@@ -10,12 +10,7 @@ pipeline {
         }
 
         stage('build app') {
-          agent {
-            node {
-              label 'gradle:6-jdk11'
-            }
-
-          }
+          agent any
           steps {
             sh 'ci/build-app.sh'
           }
